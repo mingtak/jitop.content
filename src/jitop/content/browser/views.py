@@ -35,7 +35,7 @@ class CoverView(BrowserView):
     def __call__(self):
 
         portal = api.portal.get()
-        folderName = ['about', 'service', 'showcase', 'partner', 'media']
+        folderName = ['about', 'service', 'showcase', 'partner', 'media', 'news']
         self.results = {}
 
         for folderItem in folderName:
