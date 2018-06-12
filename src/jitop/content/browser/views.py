@@ -21,11 +21,13 @@ class ContactUs(BrowserView):
         text = request.form.get('text')
         # 測試信件
         api.portal.send_email(
-            recipient="andy@mingtak.com.tw",
+            recipient="ama.bridgecon@gmail.com; vikiso668@gmail.com; andy@mingtak.com.tw",
             sender="noreply@amagroup.com.tw",
             subject="台灣醫美通聯盟 網站使用者來信",
             body="姓名: %s \nemail: %s \n來信內容: %s" % (name, email, text),
         )
+        api.portal.show_message(message=safe_unicode('訊息已送出，我們會儘快為您回覆!'), request=request)
+        request.response.redirect('%s/#contact-section' % portal.absolute_url())
 
 
 class CoverView(BrowserView):
